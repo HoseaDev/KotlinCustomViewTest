@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#123"
+    android:orientation="vertical">
+
+    <com.example.kotlintest.TouchViewGroup
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.example.kotlintest.TouchView
+            android:layout_width="200dp"
+            android:id="@+id/touch1"
+            android:background="#aaa"
+            android:layout_height="200dp"/>
+<!--        <com.example.kotlintest.Touch2View-->
+<!--            android:id="@+id/touch2"-->
+<!--            android:layout_width="100dp"-->
+<!--            android:background="#111"-->
+<!--            android:layout_height="100dp"/>-->
+
+
+
+
+    </com.example.kotlintest.TouchViewGroup>
+
+
+    <!--    <com.example.kotlintest.MyTextView-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:background="#0000ff"-->
+    <!--        android:padding="10dp"-->
+    <!--        app:myText="成都人abcdefg"-->
+    <!--        app:myTextColor="@color/colorAccent" />-->
+
+    <!--    <com.example.kotlintest.QQStepView-->
+    <!--        android:id="@+id/step_view"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:background="#0000ff"-->
+    <!--        android:padding="10dp" />-->
+
+    <!--    <com.example.kotlintest.TrackTextView-->
+    <!--        android:id="@+id/trackText"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:background="#0000ff"-->
+    <!--        android:padding="10dp"-->
+    <!--        android:text="Hello World"-->
+    <!--        android:textSize="20sp" />-->
+
+    <!--    <Button-->
+    <!--        android:id="@+id/leftToRight"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="从左到右" />-->
+
+    <!--    <Button-->
+    <!--        android:id="@+id/rightToLeft"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="从右到左" />-->
+
+    <!--    <com.example.kotlintest.MyRatingBar-->
+    <!--        android:background="#456"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        app:starNumb="5"-->
+    <!--        app:normalPattern="@mipmap/icon_star_normal"-->
+    <!--        app:selectPattern="@mipmap/icon_star_select" />-->
+    <!--    <com.example.kotlintest.LetterView-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:padding="10dp"-->
+    <!--        android:id="@+id/letterView"-->
+    <!--        android:layout_alignParentRight="true"-->
+    <!--        app:myLetterViewTextColor="@color/colorPrimary"-->
+    <!--        app:myLetterViewTextSize="15sp"-->
+    <!--        app:myTextSelectColor="@color/colorAccent" />-->
+    <!--    <TextView-->
+    <!--        android:id="@+id/centerLetter"-->
+    <!--        android:text="123"-->
+    <!--        android:padding="20dp"-->
+    <!--        android:visibility="gone"-->
+    <!--        android:textColor="@color/colorAccent"-->
+    <!--        android:layout_centerInParent="true"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:background="@drawable/shape_circle"-->
+    <!--        android:layout_height="wrap_content"/>-->
+
+<!--    <com.example.kotlintest.TagLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:background="#ff0000">-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_margin="10dp"-->
+<!--            android:text="1今天天气真的很好" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="20dp"-->
+<!--            android:layout_margin="10dp"-->
+<!--            android:layout_marginRight="20dp"-->
+<!--            android:text="2哦，是吗？" />-->
+
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="3是的是的" />-->
+
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:text="4那明天的天气怎么样呢？"-->
+<!--                    android:layout_height="wrap_content"/>-->
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:text="5这个太高端了我还真的不知道，要不你查查天气预报。"-->
+<!--                    android:layout_height="wrap_content"/>-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:text="11111"-->
+<!--                    android:layout_height="wrap_content"/>-->
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:text="22"-->
+<!--                    android:layout_height="wrap_content"/>-->
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:text="333333"-->
+<!--                    android:layout_height="wrap_content"/>-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:text="44444444"-->
+<!--                    android:layout_height="wrap_content"/>-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:text="55"-->
+<!--                    android:layout_margin="10dp"-->
+<!--                    android:layout_height="wrap_content"/>-->
+
+<!--    </com.example.kotlintest.TagLayout>-->
+
+</RelativeLayout>

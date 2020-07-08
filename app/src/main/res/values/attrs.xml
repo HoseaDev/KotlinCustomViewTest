@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="MyTextView">
+        <attr name="myTextSize" format="dimension" />
+        <attr name="myText" format="string" />
+        <attr name="myTextColor" format="color" />
+
+    </declare-styleable>
+
+    <declare-styleable name="QQStepView">
+        <attr name="myBorderWidth" format="dimension" />
+        <attr name="myStartColor" format="color" />
+        <attr name="myEndColor" format="color" />
+        <attr name="myCentTextSize" format="dimension" />
+        <attr name="myCentTextColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="TrackTextView">
+
+        <attr name="myOriginalColor" format="color" />
+        <attr name="myChangeColor" format="color" />
+    </declare-styleable>
+
+
+    <declare-styleable name="MyRatingBar">
+
+        <attr name="selectPattern" format="reference" />
+        <attr name="normalPattern" format="reference" />
+        <attr name="starNumb" format="integer" />
+
+    </declare-styleable>
+
+    <declare-styleable name="LetterView">
+        <attr name="myLetterViewTextSize" format="dimension" />
+        <attr name="myLetterViewTextColor" format="color" />
+        <attr name="myTextSelectColor" format="color" />
+
+    </declare-styleable>
+
+    <declare-styleable name="SlidingMenu">
+        <attr name="marginRightWidth" format="dimension" />
+    </declare-styleable>
+</resources>
