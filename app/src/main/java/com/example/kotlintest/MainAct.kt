@@ -25,23 +25,7 @@ public class MainAct : AppCompatActivity() {
 //        touch2.setOnClickListener({
 //            Log.i("hltag", "touch2 onClick")
 //        })
-        Log.i("hltag", "..................")
-        Log.i("hltag", "..................")
-        Log.i("hltag", "..................")
-        Log.i("hltag", "..................")
-        Log.i("hltag", "..................")
-        Log.i("hltag", "..................")
-        Log.i("hltag", "..................")
-        Log.i("hltag", "..................")
-        Log.i("hltag", "..................")
-        Log.i("hltag", "..................")
-        Log.i("hltag", "..................")
-        Log.i("hltag", "..................")
-        Log.i("hltag", "..................")
-        Log.i("hltag", "..................")
-        Log.i("hltag", "..................")
-        Log.i("hltag", "..................")
-        Log.i("hltag", "..................")
+
 //        letterView.onTouchLetterListener=object :LetterView.OnTouchLetterListener{
 //            override fun touch(letter: String, show: Boolean) {
 //                if (show){
