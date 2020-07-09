@@ -40,4 +40,8 @@
     <declare-styleable name="SlidingMenu">
         <attr name="marginRightWidth" format="dimension" />
     </declare-styleable>
+    <declare-styleable name="SlidingMenu2">
+        <attr name="marginRightWidth2" format="dimension" />
+    </declare-styleable>
+
 </resources>
