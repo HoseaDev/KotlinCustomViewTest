@@ -5,16 +5,23 @@ import android.content.res.Resources
 import android.util.AttributeSet
 import android.util.DisplayMetrics
 import android.util.Log
+import android.view.GestureDetector
 import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import android.widget.HorizontalScrollView
+import androidx.core.view.GestureDetectorCompat
 import androidx.core.view.ViewCompat
 
 class SlidingMenu : HorizontalScrollView {
     private var mMenuWidth: Int = 0;
     private lateinit var menuLayout: View
     private lateinit var homeLayout: View
+    private lateinit var mGestureDetector: GestureDetectorCompat;
+    private var TAG = "hltag"
+    val MIN_DISTANCE = 100
+    val VELOCITY_X = 2000
+    private var drawerState: Boolean = false
 
     constructor(context: Context?) : this(context, null)
     constructor(context: Context?, attrs: AttributeSet?) : this(context, attrs, 0)
@@ -28,7 +35,76 @@ class SlidingMenu : HorizontalScrollView {
             typedArray.getDimension(R.styleable.SlidingMenu_marginRightWidth, dp2px(context, 50f))
         mMenuWidth = (getScreenWidth(context) - marginWidth).toInt();
         typedArray.recycle()
+        mGestureDetector =
+            GestureDetectorCompat(context, object : GestureDetector.OnGestureListener {
+                override fun onShowPress(e: MotionEvent?) {
+                    Log.i(TAG, "onShowPress" + e?.action)
 
+                }
+
+                override fun onSingleTapUp(e: MotionEvent?): Boolean {
+                    Log.i(TAG, "onSingleTapUp" + e?.action)
+                    return false
+                }
+
+                override fun onDown(e: MotionEvent?): Boolean {
+
+                    Log.i(TAG, "onDown" + e?.action)
+                    return false
+                }
+
+                override fun onFling(
+                    e1: MotionEvent,
+                    e2: MotionEvent,
+                    velocityX: Float,
+                    velocityY: Float
+                ): Boolean {
+                    Log.i(
+                        TAG,
+                        "onFling e1 = ${e1?.action}   e2= ${e2?.action}  velocityX=$velocityX  velocityY = $velocityY"
+                    )
+                    Log.i(
+                        TAG,
+                        "onFling e1 = ${e1?.x}   e2= ${e2?.x}  velocityX=$velocityX  velocityY = $velocityY"
+                    )
+                    if (e1.x - e2.x > MIN_DISTANCE && Math.abs(velocityX) > VELOCITY_X) {
+                        Log.i(
+                            TAG,
+                            "左滑"
+                        )
+                        closeMenu()
+                        return true
+                    } else if (e2.x - e1.x > MIN_DISTANCE && Math.abs(velocityX) > VELOCITY_X) {
+                        Log.i(
+                            TAG,
+                            "右滑"
+                        )
+                        openMenu()
+                        return true
+                    }
+
+
+                    return false
+                }
+
+                override fun onScroll(
+                    e1: MotionEvent?,
+                    e2: MotionEvent?,
+                    distanceX: Float,
+                    distanceY: Float
+                ): Boolean {
+
+                    Log.i(
+                        TAG,
+                        "onScroll e1 = ${e1?.action}   e2= ${e2?.action}  distanceX=$distanceX  distanceY = $distanceY"
+                    )
+                    return false
+                }
+
+                override fun onLongPress(e: MotionEvent?) {
+                    Log.i(TAG, "onLongPress" + e?.action)
+                }
+            })
     }
 
     override fun onFinishInflate() {
@@ -53,6 +129,10 @@ class SlidingMenu : HorizontalScrollView {
     }
 
     override fun onTouchEvent(ev: MotionEvent): Boolean {
+        if (mGestureDetector?.onTouchEvent(ev)) {
+            return true
+        }
+
 //        Log.i("hltag", "onTouchEvent   ${ev.action }     $scrollX         ${mMenuWidth / 2}")
         when (ev.action) {
             MotionEvent.ACTION_UP -> {
@@ -72,9 +152,19 @@ class SlidingMenu : HorizontalScrollView {
         return super.onTouchEvent(ev)
     }
 
+    override fun onInterceptTouchEvent(ev: MotionEvent?): Boolean {
+        if (drawerState) {
+            ev.x
+        } else {
+
+        }
+
+        return super.onInterceptTouchEvent(ev)
+    }
+
     override fun onScrollChanged(l: Int, t: Int, oldl: Int, oldt: Int) {
         super.onScrollChanged(l, t, oldl, oldt)
-        Log.i("hltag", "left:$l top:$t    oldl${oldl}   oldt${oldt}")
+//        Log.i("hltag", "left:$l top:$t    oldl${oldl}   oldt${oldt}")
         var scale = 1f * l / mMenuWidth
         val rightScale = 0.7f + 0.3f * scale
 
@@ -94,20 +184,22 @@ class SlidingMenu : HorizontalScrollView {
         menuLayout.scaleY = leftScale
         //左边alpha
         val leftAlpha = 0.5f + 0.5f * (1 - scale)
-       menuLayout.alpha= leftAlpha
+        menuLayout.alpha = leftAlpha
 
         //左边平移
-        menuLayout.setTranslationX(0.2f*l)
+        menuLayout.setTranslationX(0.2f * l)
 
     }
 
 
     private fun openMenu() {
         smoothScrollTo(0, 0)
+        drawerState = true
     }
 
     private fun closeMenu() {
         smoothScrollTo(mMenuWidth, 0)
+        drawerState = false
     }
 
 
