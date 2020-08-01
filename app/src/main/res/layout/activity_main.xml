@@ -8,6 +8,7 @@
 
     <com.example.kotlintest.TouchViewGroup
         android:layout_width="match_parent"
+        android:id="@+id/below"
         android:layout_height="match_parent">
 
         <com.example.kotlintest.TouchView
@@ -23,6 +24,18 @@
 
 
 
+
+    </com.example.kotlintest.TouchViewGroup>
+    <Button
+        android:layout_width="match_parent"
+        android:id="@+id/btn1"
+        android:text="1111111111111111111"
+        android:layout_height="wrap_content"/>
+    <com.example.kotlintest.TouchViewGroup
+        android:layout_width="match_parent"
+        android:background="#66ff0000"
+        android:id="@+id/above"
+        android:layout_height="match_parent">
 
     </com.example.kotlintest.TouchViewGroup>
 

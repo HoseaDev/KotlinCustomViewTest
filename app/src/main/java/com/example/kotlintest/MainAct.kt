@@ -6,19 +6,26 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Message
 import android.util.Log
-import android.view.GestureDetector
-import android.view.MotionEvent
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.view.animation.DecelerateInterpolator
+import android.widget.BaseAdapter
+import android.widget.LinearLayout
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.snackbar.Snackbar
+import kotlinx.android.synthetic.main.activity_drag_view.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 public class MainAct : AppCompatActivity() {
     private val handler: Handler = Handler()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_sliding_menu)
+        setContentView(R.layout.activity_drag_view)
+
+
+//        Snackbar.make(this,"12",1).
+
+        simulationData()
 
 //        touch1.setOnClickListener({
 //            Log.i("hltag", "touch1 onClick")
@@ -82,5 +89,35 @@ public class MainAct : AppCompatActivity() {
 //            animator.start()
 //        }
 
+    }
+
+    private fun simulationData() {
+        val list = mutableListOf<Int>()
+        for (index in 0..100) {
+            list.add(index)
+        }
+        val adapter = object : BaseAdapter() {
+            override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
+                var container =
+                    LayoutInflater.from(this@MainAct).inflate(R.layout.item_text, parent, false) as LinearLayout
+                val tv = container.getChildAt(0) as TextView
+                tv.setText("------>${list.get(position)}")
+                return container
+            }
+
+            override fun getItem(position: Int): Any {
+                return list.get(position)
+            }
+
+            override fun getItemId(position: Int): Long {
+                return position.toLong()
+            }
+
+            override fun getCount(): Int {
+                return list.size
+            }
+
+        }
+        listView.adapter = adapter
     }
 }

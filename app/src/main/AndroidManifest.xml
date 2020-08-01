@@ -11,7 +11,8 @@
         android:theme="@style/AppTheme">
 
 
-        <activity android:name=".MainAct">
+<!--        <activity android:name=".MainAct">-->
+        <activity android:name=".MainList">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
@@ -20,5 +21,12 @@
             </intent-filter>
 
         </activity>
+        <activity android:name=".MainAct"/>
+        <activity android:name=".ScreenListAct"/>
+        <activity android:name=".MessageBubbleViewAct"/>
+        <activity android:name=".LockPatternAct"/>
+        <activity android:name=".ViewPagerAct"/>
+        <activity android:name=".WrapRecyclerAct"/>
+        <activity android:name=".TouchAct"/>
     </application>
 </manifest>
